@@ -14,10 +14,10 @@ const db = knex ({
     client: 'pg',
     version: '7.2',
     connection: {
-      host : 'postgresql-elliptical-59448',
-      user : 'postgres',
-      password : 'admin',
-      database : 'facerecognition'
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }
     }
 });
 
